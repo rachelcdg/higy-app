@@ -741,6 +741,37 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+    	function launchChatbot(){
+    		window.chatboxSettings = {
+    			appKey: 'e9f7a4c2-2e1e-4f8d-bf68-a2d64a096819',
+    			websiteId: 'peronIuse5d23lT5TV',
+    			preventMessengerPreload: true
+    			,language: 'fr'
+    			// Component behaviour
+    			// autoStart: true | false // Open and start automatically the conversation (default : false)
+    			// User datas
+    			// userId: 'UNIQUE USER ID',
+    			// firstName: 'USER FIRSTNAME',
+    			// lastName: 'USER LASTNAME',
+    			// gender: 'M | F',
+    			// You can specify a target sequence here :
+    			// ref: '<sequence id> OR "restart" to restart the welcome sequence',
+    		};
+    		(function (d, s, id) {
+    			var js, fjs = d.getElementsByTagName(s)[0];
+    			if (d.getElementById(id)) {
+    				return;
+    			}
+    			js = d.createElement(s);
+    			js.id = id;
+    			js.src = 'https://cbassets.botnation.ai/js/widget.js';
+    			js.async = true;
+    			fjs.parentNode.insertBefore(js, fjs);
+    		}(document, 'script', 'chatbox-jssdk'));
+    	}
 
+    	setTimeout(launchChatbot, 5000);
+    </script>
   </body>
 </html>
